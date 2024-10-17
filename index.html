@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Access Guest Wi-Fi</title>
+    <link rel="stylesheet" href="/assets/styles/style.css" />
+  </head>
+  <body class="bg-blur">
+    <div id="wifi-details" class="card card-bg-blur mb-1" hidden></div>
+
+    <video hidden loop playsinline>
+      <source src="/assets/video/rickload.mp4" type="video/mp4" />
+    </video>
+
+    <div id="hero" class="card card-bg-blur">
+      <h1>Guest Wi-Fi</h1>
+      <p class="mb-1">Powered by <span class="spaced-text">V<b>X</b>O</span></p>
+      <button
+        class="btn btn-gradient btn-glow mb-1"
+        onclick="activatePayload()"
+      >
+        Connect
+      </button>
+      <p>
+        <small
+          >By connecting you agree to the
+          <a class="link-text" href="" target="_blank"><b>T&C's</b></a>
+        </small>
+      </p>
+    </div>
+
+    <div id="toast" class="card card-bg-blur mb-1" hidden>
+      Wi-Fi password copied to clipboard!
+    </div>
+
+    <script src="/assets/javascript/app.js"></script>
+  </body>
+</html>
