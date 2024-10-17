@@ -20,10 +20,9 @@ const activatePayload = () => {
 
   setTimeout(() => {
     copyPasswordToClipboard();
-  }, 5000);
-  setTimeout(() => {
     wifiDetails.classList.add("show");
   }, 5000);
+
 };
 
 const copyPasswordToClipboard = () => {
@@ -34,9 +33,6 @@ const copyPasswordToClipboard = () => {
       // show copied to clipboard toast message
       const toast = document.querySelector("#toast");
       toast.classList.add("show");
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 3000);
     })
     .catch((err) => {
       console.error("Failed to copy text: ", err);

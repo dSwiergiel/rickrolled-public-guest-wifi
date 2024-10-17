@@ -29,7 +29,7 @@ p {
 }
 .card {
   padding: 1em;
-  max-width: 20em;
+  /* max-width: 20em; */
   text-align: center;
   position: relative;
   border-radius: 1em;
@@ -50,7 +50,7 @@ p {
   -webkit-background-size: cover;
   height: 120%;
   width: 120%;
-  position: absolute;
+  position: fixed;
   filter: blur(2em);
   z-index: -1;
 }
@@ -115,16 +115,14 @@ video {
 }
 
 #wifi-details {
-  display: none;
-  position: fixed;
-  left: 50%;
-  top: 5%;
-  transform: translateX(-50%);
+  visibility: hidden;
+  display: block;
   z-index: 1;
-  /* width: 200px; */
+  overflow:visible;
 }
 
 #wifi-details.show {
+  visibility: visible;
   display: block;
   animation: fadein 0.5s;
 }
@@ -133,24 +131,50 @@ video {
   display: none;
   position: fixed;
   left: 50%;
-  bottom: 20px;
+  bottom: 50px;
   transform: translateX(-50%);
-  background-color: rgb(95, 156, 103);
+  background-color: rgba(95, 156, 103, 0.972);
   border-radius: 12px;
   z-index: 1;
+  opacity: 0;
+  overflow: visible;
 }
 
 #toast.show {
   display: block;
-  animation: slidein 0.3s, fadeout 0.5s 4.5s;
-}
+  animation: slide-up 3s ease-in forwards;
 
-@keyframes slidein {
-  from {
-    bottom: -50px;
+} 
+
+@keyframes slide-up {
+  0% {
+    bottom: 10px; 
+    opacity: 0;   
   }
-  to {
-    bottom: 20px;
+
+  5% {
+    bottom: 50px;  
+    opacity: 1;
+  }
+  10% {
+    bottom: 50px;  
+    opacity: 1;     
+    animation-timing-function: ease-in-out; 
+
+  }
+  90% {
+    bottom: 50px;  
+    opacity: 1;    
+    animation-timing-function: ease-in; 
+
+  }
+  95% {
+    bottom: 10px;  
+    opacity: 0;    
+  }
+  100% {
+    bottom: 10px;   
+    opacity: 0;     
   }
 }
 
@@ -160,14 +184,5 @@ video {
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
   }
 }
